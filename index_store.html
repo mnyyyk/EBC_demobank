@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雅美堂百貨店 - 上質な暮らしをお届け</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .luxury-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+        }
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #d4af37;
+        }
+        .accordion-item {
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .accordion-button {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .accordion-button:hover {
+            background-color: #f9fafb;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .accordion-content.active {
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center space-x-8">
+                    <h1 class="text-2xl font-bold text-gray-900">雅美堂百貨店</h1>
+                    <nav class="hidden md:flex space-x-6">
+                        <a href="#products" class="nav-link text-gray-700 hover:text-yellow-600">商品</a>
+                        <a href="#events" class="nav-link text-gray-700 hover:text-yellow-600">催事場</a>
+                        <a href="#faq" class="nav-link text-gray-700 hover:text-yellow-600">よくある質問</a>
+                        <a href="#guide" class="nav-link text-gray-700 hover:text-yellow-600">ご利用ガイド</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <input type="text" placeholder="商品を検索" class="pl-10 pr-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                    <button class="text-gray-700 hover:text-yellow-600">
+                        <i class="fas fa-user text-xl"></i>
+                    </button>
+                    <button class="text-gray-700 hover:text-yellow-600">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl font-bold text-gray-800 mb-6">上質な暮らしをお届け</h2>
+            <p class="text-xl text-gray-600 mb-8">厳選された商品で、あなたの生活を豊かに彩ります</p>
+            <button class="luxury-gold text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow">
+                今すぐショッピング
+            </button>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">厳選商品</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Product 1: Silk Scarf -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/bafc1684-fcd1-4bfd-a2ab-96d7b633033e" alt="シルクスカーフ" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">エレガントシルクスカーフ</h3>
+                        <p class="text-gray-600 mb-4">フランス製の上質なシルクを使用した、優雅な花柄スカーフ</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-yellow-600">¥28,000</span>
+                            <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition-colors">
+                                カートに追加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Cashmere Knit -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/6766b4d1-9ef3-4660-991d-1e0c4e561984" alt="カシミアニット" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">プレミアムカシミアニット</h3>
+                        <p class="text-gray-600 mb-4">最高級カシミアを使用した、極上の着心地のニットセーター</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-yellow-600">¥85,000</span>
+                            <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition-colors">
+                                カートに追加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Leather Handbag -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/2647d5b0-1456-4f1b-89bf-fbab7e4bb879" alt="レザーハンドバッグ" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">イタリア製レザーハンドバッグ</h3>
+                        <p class="text-gray-600 mb-4">イタリアの職人が手作りした、上質な本革バッグ</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-yellow-600">¥120,000</span>
+                            <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition-colors">
+                                カートに追加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Diamond Earrings -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/ffe3dcab-6cfe-4788-87ce-32dc7a4ac770" alt="ダイヤモンドピアス" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">ダイヤモンドピアス 0.5ct</h3>
+                        <p class="text-gray-600 mb-4">最高級ダイヤモンドを使用した、輝きが美しいピアス</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-yellow-600">¥180,000</span>
+                            <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition-colors">
+                                カートに追加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5: Luxury Watch -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/f1f42183-0685-4813-a1a2-7e167965375c" alt="高級時計" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">スイス製高級時計</h3>
+                        <p class="text-gray-600 mb-4">自動巻きムーブメント搭載の、精密な高級時計</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-yellow-600">¥350,000</span>
+                            <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition-colors">
+                                カートに追加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6: Premium Green Tea -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/0d4b7e99-994e-4c2a-a228-11ca1395043e" alt="プレミアム緑茶" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">京都産プレミアム緑茶</h3>
+                        <p class="text-gray-600 mb-4">京都の老舗茶園で育てられた、最高級の緑茶</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-yellow-600">¥12,000</span>
+                            <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition-colors">
+                                カートに追加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7: French Wine -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/ca20a2fb-9d92-427f-91af-644363d34fd1" alt="フランス産ワイン" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">ボルドー産赤ワイン</h3>
+                        <p class="text-gray-600 mb-4">フランス・ボルドー地方の名門ワイナリーの逸品</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-yellow-600">¥25,000</span>
+                            <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition-colors">
+                                カートに追加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8: Wagyu Beef -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/a4df1fbe-36cc-421f-9edd-64c6bab14e21" alt="和牛ステーキ" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">A5ランク松阪牛ステーキ</h3>
+                        <p class="text-gray-600 mb-4">最高級A5ランクの松阪牛を使用した極上ステーキ</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-yellow-600">¥15,000</span>
+                            <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition-colors">
+                                カートに追加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 9: Luxury Chocolate -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/55434996-400c-45f2-aa4f-1defc7e94a83" alt="高級チョコレート" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">ベルギー産高級チョコレート</h3>
+                        <p class="text-gray-600 mb-4">ベルギーの老舗ショコラティエが手作りした逸品</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-yellow-600">¥8,500</span>
+                            <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition-colors">
+                                カートに追加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 10: Aroma Candle -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/aa61629d-478d-4f97-8fc9-189f98610e6f" alt="アロマキャンドル" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">天然アロマキャンドル</h3>
+                        <p class="text-gray-600 mb-4">天然香料を使用した、癒しの香りのキャンドル</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-yellow-600">¥6,800</span>
+                            <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition-colors">
+                                カートに追加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 11: Italian Leather Sofa -->
+                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/dcbe1553-3265-4be4-ba23-dec0d0174576" alt="イタリア製本革ソファー" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">イタリア製本革ソファー</h3>
+                        <p class="text-gray-600 mb-4">3人掛け、上質なイタリアンレザーを使用した高級ソファー</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-yellow-600">¥298,000</span>
+                            <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition-colors">
+                                カートに追加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">催事場のお知らせ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-pink-100 to-purple-100 rounded-lg p-6 shadow-lg">
+                    <div class="text-sm text-purple-600 font-semibold mb-2">3月5日(水) - 3月18日(火)</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">春の特別展「桜コレクション2025」</h3>
+                    <p class="text-gray-600 mb-4">桜をモチーフにした限定商品を多数ご用意。春の訪れを感じる特別な商品をお楽しみください。</p>
+                    <button class="text-purple-600 font-semibold hover:text-purple-800">詳細を見る <i class="fas fa-arrow-right ml-1"></i></button>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg p-6 shadow-lg">
+                    <div class="text-sm text-indigo-600 font-semibold mb-2">3月12日(水) - 3月25日(火)</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">欧州ブランドフェア</h3>
+                    <p class="text-gray-600 mb-4">ヨーロッパの老舗ブランドが一堂に集結。伝統と革新が融合した逸品をご紹介します。</p>
+                    <button class="text-indigo-600 font-semibold hover:text-indigo-800">詳細を見る <i class="fas fa-arrow-right ml-1"></i></button>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-100 to-teal-100 rounded-lg p-6 shadow-lg">
+                    <div class="text-sm text-teal-600 font-semibold mb-2">3月20日(木) - 4月3日(木)</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">グルメフェスタ「世界の味めぐり」</h3>
+                    <p class="text-gray-600 mb-4">世界各国の美味しいものを集めた特別企画。お家で世界旅行気分をお楽しみください。</p>
+                    <button class="text-teal-600 font-semibold hover:text-teal-800">詳細を見る <i class="fas fa-arrow-right ml-1"></i></button>
+                </div>
+                
+                <div class="bg-gradient-to-br from-yellow-100 to-orange-100 rounded-lg p-6 shadow-lg">
+                    <div class="text-sm text-orange-600 font-semibold mb-2">4月1日(火) - 4月14日(月)</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">職人展「匠の技術」</h3>
+                    <p class="text-gray-600 mb-4">日本の伝統工芸品から現代アートまで、職人の技術が光る作品を展示販売いたします。</p>
+                    <button class="text-orange-600 font-semibold hover:text-orange-800">詳細を見る <i class="fas fa-arrow-right ml-1"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">よくある質問</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    
+                    <!-- Order & Shipping -->
+                    <div class="border-b">
+                        <h3 class="text-xl font-semibold p-6 bg-gray-100">ご注文・配送について</h3>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>ご注文後のキャンセルは可能ですか？</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>ご注文から1時間以内であれば、キャンセルが可能です。それ以降は商品の準備が開始されるため、キャンセルできません。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>配送料金はいくらですか？</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>全国一律550円（税込）です。ただし、10,000円以上のご購入で送料無料となります。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>配送日時の指定はできますか？</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>はい、可能です。ご注文時に配送希望日時をお選びいただけます。ただし、地域により指定できない時間帯がございます。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>配送状況の確認方法を教えてください</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>ご注文後にお送りする確認メールに記載の追跡番号で、配送状況をご確認いただけます。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>ギフト包装は可能ですか？</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>はい、承っております。ギフト包装は330円（税込）で承ります。のし紙も無料でお付けできます。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>複数の商品をまとめて配送できますか？</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>同じ配送先、同じ配送日であれば、まとめて配送いたします。商品により配送日が異なる場合は、別々の配送となります。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>海外への配送は対応していますか？</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>申し訳ございませんが、現在は国内のみの配送となっております。海外配送は対応しておりません。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment -->
+                    <div class="border-b">
+                        <h3 class="text-xl font-semibold p-6 bg-gray-100">お支払いについて</h3>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>どのような支払い方法が利用できますか？</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>クレジットカード、代金引換、コンビニ払い、銀行振込、PayPay、Apple Payがご利用いただけます。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>クレジットカードの分割払いは可能ですか？</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>はい、可能です。3回、6回、10回、15回、20回、24回払いがご利用いただけます。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>領収書の発行はできますか？</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>はい、承っております。ご注文時に領収書発行をご希望の旨をお知らせください。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>請求書払い（後払い）は利用できますか？</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>法人のお客様に限り、請求書払いをご利用いただけます。事前に与信審査が必要となります。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>ポイントの使用方法を教えてください</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>1ポイント=1円として、お買い物時にご利用いただけます。ポイントは購入金額の1%が付与されます。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Returns & Exchanges -->
+                    <div class="border-b">
+                        <h3 class="text-xl font-semibold p-6 bg-gray-100">返品・交換について</h3>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>返品・交換の条件を教えてください</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>商品到着後8日以内、未使用・未開封の商品に限り返品・交換を承ります。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>返品期限はいつまでですか？</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>商品到着後8日以内にご連絡ください。食品類は到着後3日以内となります。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>不良品だった場合の対応について</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>弊社の責任による不良品は、返送料弊社負担で交換または返金いたします。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>サイズが合わない場合の交換について</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>タグ付きの未使用品であれば、サイズ交換承ります。返送料はお客様負担となります。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>プレゼントで頂いた商品の返品について</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>ギフトレシートをお持ちの場合、返品・交換が可能です。返金は商品券での対応となります。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Account -->
+                    <div class="border-b">
+                        <h3 class="text-xl font-semibold p-6 bg-gray-100">会員登録・アカウントについて</h3>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>会員登録の方法を教えてください</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>「新規会員登録」ボタンから、メールアドレスとパスワードをご登録ください。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>パスワードを忘れてしまいました</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>ログイン画面の「パスワードをお忘れの方」から、パスワードの再設定を行ってください。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>個人情報の変更方法について</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>マイページから「会員情報の変更」にてご変更いただけます。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>退会方法を教えてください</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>マイページから「退会手続き」または、お客様サポートまでご連絡ください。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>認証コードが届きません</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>迷惑メールフォルダをご確認ください。それでも届かない場合は、メールアドレスをご確認ください。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Products & Services -->
+                    <div class="border-b">
+                        <h3 class="text-xl font-semibold p-6 bg-gray-100">商品・サービスについて</h3>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>商品の在庫確認方法について</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>商品ページに在庫状況が表示されます。「在庫切れ」の場合は入荷予定日をお知らせいたします。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>名入れ・刻印サービスについて</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>対象商品に限り、名入れ・刻印サービスを承っております。別途料金が発生いたします。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>商品の取り寄せは可能ですか？</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>一部商品については取り寄せが可能です。お客様サポートまでお問い合わせください。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>実店舗での受け取りは可能ですか？</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>はい、可能です。ご注文時に「店舗受取」をお選びください。商品準備完了後にご連絡いたします。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>商品の保証について</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>商品により保証期間が異なります。詳細は商品ページまたは保証書をご確認ください。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Others -->
+                    <div>
+                        <h3 class="text-xl font-semibold p-6 bg-gray-100">その他</h3>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>セール情報の配信について</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>会員登録時にメール配信を希望されると、セール情報やお得な情報をお届けいたします。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>カタログの郵送について</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>季節ごとのカタログを無料でお送りしております。ご希望の方はお客様サポートまでご連絡ください。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-button p-4 flex justify-between items-center" onclick="toggleAccordion(this)">
+                                <span>お問い合わせ方法について</span>
+                                <i class="fas fa-chevron-down transition-transform"></i>
+                            </div>
+                            <div class="accordion-content p-4 bg-gray-50">
+                                <p>電話、メール、チャットでお問い合わせを承っております。営業時間は10:00-18:00（年中無休）です。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Guide Section -->
+    <section id="guide" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">ご利用ガイド</h2>
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-yellow-500">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-user-plus text-4xl text-yellow-500 mb-2"></i>
+                            <h3 class="text-xl font-semibold">会員登録</h3>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>1. 「新規会員登録」をクリック</li>
+                            <li>2. メールアドレスとパスワードを入力</li>
+                            <li>3. 個人情報を入力</li>
+                            <li>4. 利用規約に同意して登録完了</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-blue-500">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-shopping-cart text-4xl text-blue-500 mb-2"></i>
+                            <h3 class="text-xl font-semibold">お買い物</h3>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>1. 商品を選んで「カートに追加」</li>
+                            <li>2. カート内容を確認</li>
+                            <li>3. 配送先・支払い方法を選択</li>
+                            <li>4. 注文内容を確認して注文完了</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-green-500">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-truck text-4xl text-green-500 mb-2"></i>
+                            <h3 class="text-xl font-semibold">配送・受取</h3>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>1. 注文確認メールを受信</li>
+                            <li>2. 商品発送通知を受信</li>
+                            <li>3. 配送状況を追跡</li>
+                            <li>4. 商品をお受け取り</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-purple-500">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-credit-card text-4xl text-purple-500 mb-2"></i>
+                            <h3 class="text-xl font-semibold">お支払い方法</h3>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>• クレジットカード</li>
+                            <li>• 代金引換</li>
+                            <li>• コンビニ払い</li>
+                            <li>• 銀行振込</li>
+                            <li>• PayPay・Apple Pay</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-red-500">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-undo text-4xl text-red-500 mb-2"></i>
+                            <h3 class="text-xl font-semibold">返品・交換</h3>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>1. 商品到着後8日以内にご連絡</li>
+                            <li>2. 返品理由をお知らせください</li>
+                            <li>3. 返送先をご案内</li>
+                            <li>4. 商品確認後に返金・交換</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-orange-500">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-headset text-4xl text-orange-500 mb-2"></i>
+                            <h3 class="text-xl font-semibold">お客様サポート</h3>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>• 電話：0120-123-456</li>
+                            <li>• メール：support@gabido.jp</li>
+                            <li>• チャット：24時間対応</li>
+                            <li>• 営業時間：10:00-18:00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">雅美堂百貨店</h3>
+                    <p class="text-gray-400 mb-4">上質な暮らしをお届けする百貨店として、お客様に最高のショッピング体験を提供いたします。</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">ショッピング</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li><a href="#" class="hover:text-white">商品一覧</a></li>
+                        <li><a href="#" class="hover:text-white">ブランド一覧</a></li>
+                        <li><a href="#" class="hover:text-white">セール情報</a></li>
+                        <li><a href="#" class="hover:text-white">新着商品</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">サポート</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li><a href="#" class="hover:text-white">よくある質問</a></li>
+                        <li><a href="#" class="hover:text-white">ご利用ガイド</a></li>
+                        <li><a href="#" class="hover:text-white">お問い合わせ</a></li>
+                        <li><a href="#" class="hover:text-white">店舗情報</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">会社情報</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li><a href="#" class="hover:text-white">会社概要</a></li>
+                        <li><a href="#" class="hover:text-white">採用情報</a></li>
+                        <li><a href="#" class="hover:text-white">プライバシーポリシー</a></li>
+                        <li><a href="#" class="hover:text-white">利用規約</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 雅美堂百貨店. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                // Close all other accordions
+                document.querySelectorAll('.accordion-content').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelectorAll('.accordion-button i').forEach(item => {
+                    item.style.transform = 'rotate(0deg)';
+                });
+                
+                // Open clicked accordion
+                content.classList.add('active');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script>
+      !(function(){const sc=document.createElement('script');sc.src="https://apps.voc.ai/api_v2/gpt/bots/livechat/embed.js?id=23210&token=685E9474E4B05ACE415AD9F2";sc.async=true;sc.defer=true;document.body.appendChild(sc);})()
+    </script>
+</body>
+</html>

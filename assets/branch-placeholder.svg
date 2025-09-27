@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="支店の外観（ダミー画像）">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e5f0ff"/>
+      <stop offset="100%" stop-color="#c7d8ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#g)"/>
+  <g fill="none" stroke="#1e40af" stroke-width="6">
+    <rect x="150" y="180" width="900" height="420" rx="8"/>
+    <rect x="210" y="240" width="780" height="240"/>
+    <rect x="210" y="510" width="150" height="60"/>
+    <rect x="360" y="510" width="150" height="60"/>
+    <rect x="510" y="510" width="150" height="60"/>
+    <rect x="660" y="510" width="150" height="60"/>
+    <rect x="810" y="510" width="150" height="60"/>
+  </g>
+  <g font-family="'Noto Sans JP', sans-serif" fill="#1e40af" text-anchor="middle">
+    <text x="600" y="130" font-size="48" font-weight="700">みらい銀行</text>
+    <text x="600" y="200" font-size="28" font-weight="600">渋谷支店（ダミー画像）</text>
+    <text x="600" y="340" font-size="22">地域に根ざした金融サービス</text>
+  </g>
+  <g stroke="#3b82f6" stroke-width="4" fill="#ffffff">
+    <circle cx="1050" cy="120" r="18"/>
+    <path d="M1050 110 v-30"/>
+    <path d="M1040 120 h-30"/>
+  </g>
+</svg>
